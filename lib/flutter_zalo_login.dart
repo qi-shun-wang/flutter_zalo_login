@@ -30,7 +30,7 @@ class ZaloLogin {
   /// Ex: `ZaloLoginResult res = await ZaloLogin().logIn();`
   ///
   Future<ZaloLoginResult> logIn() async {
-    final Map<dynamic, dynamic> result = await channel.invokeMethod('logIn');
+    final Map<dynamic, dynamic>? result = await channel.invokeMethod('logIn');
 
     return ZaloLoginResult.fromJson(result ?? {});
   }
@@ -53,7 +53,7 @@ class ZaloLogin {
   ///
   Future<ZaloProfileModel> getInfo() async {
     await channel.invokeMethod('getInfo');
-    final Map<dynamic, dynamic> result = await channel.invokeMethod('getInfo');
+    final Map<dynamic, dynamic>? result = await channel.invokeMethod('getInfo');
 
     return ZaloProfileModel.fromJson(result ?? {});
   }
